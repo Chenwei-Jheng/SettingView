@@ -19,7 +19,7 @@ typedef enum StyleType {
 @property(nonatomic)UISlider *testSlider;
 @property(nonatomic)UIStepper *testStepper;
 @property(nonatomic)UISwitch *testSwitch;
-@property(nonatomic, weak)UITextField *testTextField;
+@property(nonatomic)UITextField *testTextField;
 
 - (instancetype)initWithFrame:(CGRect)frame Style:(StyleType) style;
 
