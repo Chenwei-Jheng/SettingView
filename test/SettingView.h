@@ -17,9 +17,11 @@ typedef enum StyleType {
 @interface SettingView : UIView <UITextFieldDelegate>
 @property(nonatomic)StyleType styleType;
 @property(nonatomic)UISlider *testSlider;
+@property(nonatomic)UISlider *testSlider1;
+@property(nonatomic)UILabel *testSlider1Label;
 @property(nonatomic)UIStepper *testStepper;
 @property(nonatomic)UISwitch *testSwitch;
-@property(nonatomic)UITextField *testTextField;
+@property(nonatomic, strong)UITextField *testTextField;
 
 - (instancetype)initWithFrame:(CGRect)frame Style:(StyleType) style;
 

@@ -54,6 +54,21 @@
     self.testSlider.value = 50;
     [self.testSlider addTarget:self action:@selector(sliderValue:) forControlEvents:UIControlEventValueChanged];
     [self addSubview:self.testSlider];
+    
+    self.testSlider1 = [[UISlider alloc] initWithFrame:CGRectMake(20, 50, self.frame.size.width - 40 - 50, 30)];
+    self.testSlider1.maximumValue = 100;
+    self.testSlider1.minimumValue = 0;
+    self.testSlider1.value = 50;
+    [self.testSlider1 addTarget:self action:@selector(sliderValue:) forControlEvents:UIControlEventValueChanged];
+    [self addSubview:self.testSlider1];
+    
+    self.testSlider1Label = [[UILabel alloc] initWithFrame:CGRectMake(self.testSlider1.frame.size.width + 20, 50, 50, 30)];
+    self.testSlider1Label.text = [NSString stringWithFormat:@"%d", (int)self.testSlider1.value];
+    self.testSlider1Label.enabled = NO;
+    self.testSlider1.tag = 2;
+    [self addSubview:self.testSlider1Label];
+    
+    
 }
 
 - (void)showStyleTypeTest2 {
@@ -86,6 +101,10 @@
 }
 
 - (IBAction)sliderValue:(UISlider *)sender {
+    if ( sender.tag == 2 ) {
+        self.testSlider1Label.text = [NSString stringWithFormat:@"%d", (int)sender.value];
+    }
+    self.testSlider1.maximumValue = self.testSlider.value - 1;
     sender.value = sender.value;
 }
 
